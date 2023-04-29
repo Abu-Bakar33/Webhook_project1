@@ -1,0 +1,4 @@
+gunicorn
+flask
+alpaca_trade_api
+aiohttp
