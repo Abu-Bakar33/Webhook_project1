@@ -1,5 +1,5 @@
 {
-    "passphrase": "somelongstring123",
+    "passphrase": "Peter",
     "time": "{{timenow}}",
     "exchange": "{{exchange}}",
     "ticker": "{{ticker}}",

@@ -11,6 +11,7 @@
         background: white;
         color: black;
         margin: auto;
+        margin-bottom: 20px;
       }
       td {
         padding: 15px;
@@ -30,6 +31,7 @@
     />
     <h2>Peter's webhook Dashboard</h2>
 
+    <h3>Orders</h3>
     <table>
       <tr>
         <th>created</th>
@@ -49,6 +51,28 @@
         <td>{{ order.qty }}</td>
         <td>{{ order.limit_price }}</td>
         <td>{{ order.filled_avg_price }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <h3>Positions</h3>
+    <table>
+      <tr>
+        <th>symbol</th>
+        <th>qty</th>
+        <th>avg entry price</th>
+        <th>market value</th>
+        <th>unrealized profit/loss</th>
+        <th>unrealized profit/loss %</th>
+      </tr>
+      {% for position in alpaca_positions %}
+      <tr>
+        <td>{{ position.symbol }}</td>
+        <td>{{ position.qty }}</td>
+        <td>{{ position.avg_entry_price }}</td>
+        <td>{{ position.market_value }}</td>
+        <td>{{ position.unrealized_pl }}</td>
+        <td>{{ position.unrealized_plpc }}</td>
       </tr>
       {% endfor %}
     </table>
